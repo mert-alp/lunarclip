@@ -65,7 +65,7 @@ Horizontal 16:9 crops often lose crucial visual subjects. LunarClip includes con
 ### ⚡ 5. Transparent, Predictable Plans (No Credit Traps)
 No opaque "credits" that expire or penalize longer recordings.
 - **Free Tier**: 5 videos per month (up to 2h source duration), 720p output with watermark.
-- **Supporter Plan ($5/mo)**: 25 videos per month (up to 4h source duration), 1080p crisp output, watermark removed.
+- **Supporter Plan ($3,49/mo)**: 25 videos per month (up to 4h source duration), 1080p crisp output, watermark removed.
 - **Pro Plan ($10/mo)**: 50 videos per month (up to 8h sources), up to 4K / 2160p output (matching 4K source files), up to 20 clips per video, and direct YouTube publishing integration.
 
 ---
