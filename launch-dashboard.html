@@ -12,6 +12,8 @@
       --accent: #38bdf8;
       --accent-hover: #0284c7;
       --green: #22c55e;
+      --orange: #f97316;
+      --purple: #a855f7;
       --text: #f1f5f9;
       --text-muted: #94a3b8;
     }
@@ -23,7 +25,7 @@
       padding: 30px 20px;
       line-height: 1.5;
     }
-    .container { max-width: 1200px; margin: 0 auto; }
+    .container { max-width: 1240px; margin: 0 auto; }
     header {
       text-align: center;
       margin-bottom: 35px;
@@ -60,6 +62,11 @@
       display: flex;
       flex-direction: column;
     }
+    .card.completed {
+      border-color: #065f46;
+      background: #0d1a24;
+      opacity: 0.85;
+    }
     .card-header {
       display: flex;
       justify-content: space-between;
@@ -80,6 +87,7 @@
     }
     .badge.green { background: #064e3b; color: #34d399; border-color: #34d39933; }
     .badge.orange { background: #7c2d12; color: #fb923c; border-color: #fb923c33; }
+    .badge.purple { background: #581c87; color: #d8b4fe; border-color: #d8b4fe33; }
     .btn-open {
       display: inline-block;
       text-align: center;
@@ -93,6 +101,12 @@
       transition: background 0.2s;
     }
     .btn-open:hover { background: var(--accent-hover); color: #fff; }
+    .btn-open.purple { background: var(--purple); color: #fff; }
+    .btn-open.purple:hover { background: #9333ea; }
+    .btn-open.orange { background: var(--orange); color: #fff; }
+    .btn-open.orange:hover { background: #ea580c; }
+    .btn-open.gray { background: #334155; color: #cbd5e1; }
+    .btn-open.gray:hover { background: #475569; }
     .field { margin-bottom: 14px; }
     .field-label {
       font-size: 0.8rem;
@@ -162,16 +176,16 @@
 
   <div class="grid">
 
-    <!-- Card 1: AlternativeTo -->
+    <!-- Card: Toolify.ai -->
     <div class="card">
       <div class="card-header">
-        <span class="card-title">AlternativeTo</span>
-        <span class="badge green">DA 83 • Öncelik #1</span>
+        <span class="card-title">Toolify.ai</span>
+        <span class="badge green">Milyonlarca AI Araması</span>
       </div>
-      <a href="https://alternativeto.net/software/suggest/" target="_blank" class="btn-open">AlternativeTo Gönderim Formunu Aç ↗</a>
-      
+      <a href="https://www.toolify.ai/submit" target="_blank" class="btn-open">Toolify.ai Gönderim Formunu Aç ↗</a>
+
       <div class="field">
-        <div class="field-label">Uygulama Adı</div>
+        <div class="field-label">Tool Name</div>
         <div class="field-box">
           <span>LunarClip</span>
           <button class="btn-copy" onclick="copyText('LunarClip')">Kopyala</button>
@@ -187,51 +201,162 @@
       </div>
 
       <div class="field">
-        <div class="field-label">Download URL</div>
+        <div class="field-label">Kategori</div>
         <div class="field-box">
-          <span>https://lunarclip.com/download</span>
-          <button class="btn-copy" onclick="copyText('https://lunarclip.com/download')">Kopyala</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="field-label">Alternatifi Olduğu Araçlar (SEO İÇİN KRİTİK)</div>
-        <div class="field-box">
-          <span>OpusClip, Vizard, Klap, Choppity, Descript</span>
-          <button class="btn-copy" onclick="copyText('OpusClip, Vizard, Klap, Choppity, Descript')">Kopyala</button>
+          <span>Video Editing / Social Media / Video Generator</span>
+          <button class="btn-copy" onclick="copyText('Video Editing')">Kopyala</button>
         </div>
       </div>
 
       <div class="field">
         <div class="field-label">Kısa Açıklama</div>
-        <div class="field-box">
-          <span>Local-first AI clipper for Windows turning long videos into vertical shorts.</span>
-          <button class="btn-copy" onclick="copyText('Local-first AI clipper for Windows turning long videos into vertical shorts.')">Kopyala</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="field-label">Detaylı Açıklama (Description)</div>
-        <div class="field-box multiline" id="alt-desc">LunarClip is a Windows desktop application that turns long-form video files and public YouTube links into captioned vertical shorts for TikTok, YouTube Shorts, and Instagram Reels.
-
-Unlike cloud-based clippers that require uploading tens of gigabytes of footage, LunarClip runs locally on your PC:
-- Video and audio never leave your machine; media inspection and speech transcription (via faster-whisper in 46+ languages) run locally.
-- Multi-signal highlight selection combines audience replay heatmaps, sound spikes, scene dynamics, and AI moment scoring.
-- Adaptive layout templates: Podcast split-screen with active speaker cutting, Gaming layout with facecam on top (~30%) and gameplay below (~70%), and Sports wide tracking following the ball.
-- Transparent pricing with predictable monthly video allowances instead of expiring credit systems.</div>
+        <div class="field-box multiline" id="toolify-desc">Local-first Windows AI app that transforms long videos and YouTube links into vertical clips for TikTok and Shorts with auto-reframing and subtitles. Video stays on your PC.</div>
         <div class="copy-footer">
-          <button class="btn-copy" onclick="copyElement('alt-desc')">Tüm Açıklamayı Kopyala</button>
+          <button class="btn-copy" onclick="copyElement('toolify-desc')">Açıklamayı Kopyala</button>
         </div>
       </div>
     </div>
 
-    <!-- Card 2: Reddit (r/SideProject & r/SaaS) -->
+    <!-- Card: There's An AI For That -->
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Reddit (r/SideProject)</span>
+        <span class="card-title">There's An AI For That</span>
+        <span class="badge purple">TAAFT Katalogu</span>
+      </div>
+      <a href="https://theresanaiforthat.com/submit/" target="_blank" class="btn-open purple">TAAFT Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Tool Name</div>
+        <div class="field-box">
+          <span>LunarClip</span>
+          <button class="btn-copy" onclick="copyText('LunarClip')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Website URL</div>
+        <div class="field-box">
+          <span>https://lunarclip.com</span>
+          <button class="btn-copy" onclick="copyText('https://lunarclip.com')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Görev / Task</div>
+        <div class="field-box">
+          <span>Turning long videos and podcasts into vertical shorts</span>
+          <button class="btn-copy" onclick="copyText('Turning long videos and podcasts into vertical shorts')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Ayırt Edici Özellik (Differentiator)</div>
+        <div class="field-box">
+          <span>Local-first on Windows, no heavy cloud video upload, no per-minute credit burn</span>
+          <button class="btn-copy" onclick="copyText('Local-first on Windows, no heavy cloud video upload, no per-minute credit burn')">Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Futurepedia.io -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Futurepedia.io</span>
+        <span class="badge">AI Dizin</span>
+      </div>
+      <a href="https://www.futurepedia.io/submit-tool" target="_blank" class="btn-open">Futurepedia Gönderim Formunu Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Tool Name & URL</div>
+        <div class="field-box">
+          <span>LunarClip • https://lunarclip.com</span>
+          <button class="btn-copy" onclick="copyText('https://lunarclip.com')">URL Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Açıklama</div>
+        <div class="field-box multiline" id="fp-desc">LunarClip turns long videos into vertical shorts directly on your Windows PC. With local-first processing, video files never leave your machine. Features multi-signal highlight selection, animated captions, and auto-reframing for podcasts, gaming, and sports.</div>
+        <div class="copy-footer">
+          <button class="btn-copy" onclick="copyElement('fp-desc')">Açıklamayı Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: SaaSHub -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">SaaSHub</span>
+        <span class="badge">Yazılım Kıyaslama</span>
+      </div>
+      <a href="https://www.saashub.com/submit" target="_blank" class="btn-open">SaaSHub Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Website URL</div>
+        <div class="field-box">
+          <span>https://lunarclip.com</span>
+          <button class="btn-copy" onclick="copyText('https://lunarclip.com')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Kategori & Rakipler</div>
+        <div class="field-box">
+          <span>Video Editing Software • OpusClip, Vizard, Klap</span>
+          <button class="btn-copy" onclick="copyText('OpusClip, Vizard, Klap, Descript')">Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Product Hunt -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Product Hunt</span>
+        <span class="badge green">DA 91 • Lansman</span>
+      </div>
+      <a href="https://www.producthunt.com/posts/new" target="_blank" class="btn-open">Product Hunt Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Tagline (Maks 60 Karakter)</div>
+        <div class="field-box">
+          <span>AI long-to-vertical video clipper for Windows</span>
+          <button class="btn-copy" onclick="copyText('AI long-to-vertical video clipper for Windows')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Maker İlk Yorum (Lansman Anında)</div>
+        <div class="field-box multiline" id="ph-comment">Hey Product Hunt community! 👋
+
+I'm Mert, creator of LunarClip (https://lunarclip.com).
+
+As content creators, we know the friction of turning 2-hour podcasts or livestreams into vertical shorts:
+1. You wait forever uploading 20GB+ video files to a browser.
+2. Opaque credit systems penalize long content (a single 2-hour stream can burn 120 credits).
+
+We built LunarClip as a native Windows desktop app to solve this with a local-first philosophy:
+🔒 Privacy-First: Your raw video stays on your PC. Demuxing (FFmpeg) and transcription (faster-whisper in 46+ languages) execute locally.
+🎯 Real Engagement Signals: It reads YouTube audience replay heatmaps, sound energy, and scene cuts.
+📐 Smart Framing: Podcast split-screen, gaming webcam overlays, and sports ball-tracking.
+💳 Zero Credit Gimmicks: Simple flat monthly source video allowances.
+
+Download the free tier on Windows and let me know your thoughts!</div>
+        <div class="copy-footer">
+          <button class="btn-copy" onclick="copyElement('ph-comment')">Maker Yorumunu Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Reddit (r/SideProject & r/SaaS) -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Reddit (r/SideProject & r/SaaS)</span>
         <span class="badge orange">Topluluk & Organik Trafik</span>
       </div>
-      <a href="https://www.reddit.com/r/SideProject/submit" target="_blank" class="btn-open">r/SideProject Gönderim Ekranını Aç ↗</a>
+      <div style="display:flex; gap:10px; margin-bottom:16px;">
+        <a href="https://www.reddit.com/r/SideProject/submit" target="_blank" class="btn-open orange" style="flex:1; margin-bottom:0;">r/SideProject Aç ↗</a>
+        <a href="https://www.reddit.com/r/SaaS/submit" target="_blank" class="btn-open orange" style="flex:1; margin-bottom:0;">r/SaaS Aç ↗</a>
+      </div>
 
       <div class="field">
         <div class="field-label">Gönderi Başlığı (Title)</div>
@@ -270,111 +395,63 @@ I’d love to get feedback from fellow creators and devs: how do you currently h
       </div>
     </div>
 
-    <!-- Card 3: Product Hunt -->
+    <!-- Card: Hacker News (Show HN) -->
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Product Hunt</span>
-        <span class="badge green">DA 91 • Lansman</span>
+        <span class="card-title">Hacker News (Show HN)</span>
+        <span class="badge">Teknik Topluluk</span>
       </div>
-      <a href="https://www.producthunt.com/posts/new" target="_blank" class="btn-open">Product Hunt Gönderim Sayfasını Aç ↗</a>
+      <a href="https://news.ycombinator.com/submit" target="_blank" class="btn-open">Hacker News Gönderim Sayfasını Aç ↗</a>
 
       <div class="field">
-        <div class="field-label">Ürün Adı</div>
+        <div class="field-label">Title</div>
         <div class="field-box">
-          <span>LunarClip</span>
-          <button class="btn-copy" onclick="copyText('LunarClip')">Kopyala</button>
+          <span>Show HN: LunarClip – Local-first AI video clipper for Windows</span>
+          <button class="btn-copy" onclick="copyText('Show HN: LunarClip – Local-first AI video clipper for Windows')">Kopyala</button>
         </div>
       </div>
 
       <div class="field">
-        <div class="field-label">Tagline (Maks 60 Karakter)</div>
+        <div class="field-label">URL</div>
         <div class="field-box">
-          <span>AI long-to-vertical video clipper for Windows</span>
-          <button class="btn-copy" onclick="copyText('AI long-to-vertical video clipper for Windows')">Kopyala</button>
+          <span>https://lunarclip.com</span>
+          <button class="btn-copy" onclick="copyText('https://lunarclip.com')">Kopyala</button>
         </div>
       </div>
 
       <div class="field">
-        <div class="field-label">Maker İlk Yorum (Lansman Anında)</div>
-        <div class="field-box multiline" id="ph-comment">Hey Product Hunt community! 👋
+        <div class="field-label">Text / Self-Comment</div>
+        <div class="field-box multiline" id="hn-comment">Hi HN,
 
-I'm Mert, creator of LunarClip (https://lunarclip.com).
+I built LunarClip (https://lunarclip.com), a Windows desktop app that transforms long video files and YouTube links into vertical 9:16 clips for Shorts, TikTok, and Reels.
 
-As content creators, we know the friction of turning 2-hour podcasts or livestreams into vertical shorts:
-1. You wait forever uploading 20GB+ video files to a browser.
-2. Opaque credit systems penalize long content (a single 2-hour stream can burn 120 credits).
+Most existing video clippers operate as cloud services. While cloud works well for short web clips, it breaks down for 2–8 hour livestreams, esports matches, and long podcasts. Uploading a 20GB recording over typical home broadband takes an hour before processing begins, and cloud GPU rendering costs force vendors into restrictive per-minute credit models.
 
-We built LunarClip as a native Windows desktop app to solve this with a local-first philosophy:
-🔒 Privacy-First: Your raw video stays on your PC. Demuxing (FFmpeg) and transcription (faster-whisper in 46+ languages) execute locally.
-🎯 Real Engagement Signals: It reads YouTube audience replay heatmaps, sound energy, and scene cuts.
-📐 Smart Framing: Podcast split-screen, gaming webcam overlays, and sports ball-tracking.
-💳 Zero Credit Gimmicks: Simple flat monthly source video allowances.
+LunarClip uses a local-first pipeline:
+1. Media demuxing and inspection run locally via FFmpeg / ffprobe.
+2. Speech transcription runs on-device using faster-whisper (CTranslate2), supporting 46+ languages.
+3. Only the lightweight text transcript is sent to our backend for semantic moment scoring, hook generation, and layout orchestration.
+4. Video rendering and word-level karaoke caption burning execute locally.
 
-Download the free tier on Windows and let me know your thoughts!</div>
+Because heavy video frames never leave the user's machine, we avoid large cloud egress/storage costs and can offer straightforward monthly allowances without credit expiration.
+
+Public repo and technical documentation: https://github.com/mert-alp/lunarclip
+
+I'd appreciate any feedback on our local pipeline architecture or desktop workflow!</div>
         <div class="copy-footer">
-          <button class="btn-copy" onclick="copyElement('ph-comment')">Maker Yorumunu Kopyala</button>
+          <button class="btn-copy" onclick="copyElement('hn-comment')">HN Metnini Kopyala</button>
         </div>
       </div>
     </div>
 
-    <!-- Card 4: Toolify.ai & Futurepedia -->
-    <div class="card">
+    <!-- Card: AlternativeTo (COMPLETED) -->
+    <div class="card completed">
       <div class="card-header">
-        <span class="card-title">Toolify.ai & Futurepedia</span>
-        <span class="badge">AI Dizinleri</span>
+        <span class="card-title">AlternativeTo</span>
+        <span class="badge green">✓ ZATEN YAYINDA / MEVCUT</span>
       </div>
-      <a href="https://www.toolify.ai/submit" target="_blank" class="btn-open">Toolify.ai Gönderim Sayfasını Aç ↗</a>
-      <a href="https://www.futurepedia.io/submit-tool" target="_blank" class="btn-open" style="background:#8b5cf6;">Futurepedia Gönderim Sayfasını Aç ↗</a>
-
-      <div class="field">
-        <div class="field-label">Kısa Açıklama (AI Dizinleri İçin)</div>
-        <div class="field-box multiline" id="ai-dir-desc">LunarClip is a local-first Windows AI desktop app that transforms long video files and YouTube links into vertical clips for TikTok and YouTube Shorts. Video files never leave your PC; speech transcription runs locally via faster-whisper with smart reframing for podcasts, gaming, and sports.</div>
-        <div class="copy-footer">
-          <button class="btn-copy" onclick="copyElement('ai-dir-desc')">Açıklamayı Kopyala</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5: There's An AI For That -->
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">There's An AI For That</span>
-        <span class="badge">TAAFT Katalogu</span>
-      </div>
-      <a href="https://theresanaiforthat.com/submit/" target="_blank" class="btn-open">TAAFT Gönderim Sayfasını Aç ↗</a>
-
-      <div class="field">
-        <div class="field-label">Görev / Task</div>
-        <div class="field-box">
-          <span>Turning long videos and podcasts into vertical shorts</span>
-          <button class="btn-copy" onclick="copyText('Turning long videos and podcasts into vertical shorts')">Kopyala</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="field-label">Ayırt Edici Özellik (Differentiator)</div>
-        <div class="field-box">
-          <span>Local-first processing on Windows PC, no heavy cloud video upload, no per-minute credit limits</span>
-          <button class="btn-copy" onclick="copyText('Local-first processing on Windows PC, no heavy cloud video upload, no per-minute credit limits')">Kopyala</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6: SaaSHub -->
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">SaaSHub</span>
-        <span class="badge">Yazılım Kıyaslama</span>
-      </div>
-      <a href="https://www.saashub.com/submit" target="_blank" class="btn-open">SaaSHub Gönderim Sayfasını Aç ↗</a>
-
-      <div class="field">
-        <div class="field-label">Kategori & Rakipler</div>
-        <div class="field-box">
-          <span>Video Editing Software • OpusClip, Vizard, Klap</span>
-          <button class="btn-copy" onclick="copyText('OpusClip, Vizard, Klap, Descript')">Kopyala</button>
-        </div>
-      </div>
+      <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:14px;">LunarClip AlternativeTo üzerinde zaten listelenmiş durumda. Harici bir başvuru gerekmiyor.</p>
+      <a href="https://alternativeto.net/software/lunarclip/" target="_blank" class="btn-open gray">AlternativeTo Profilini Gör ↗</a>
     </div>
 
   </div>
