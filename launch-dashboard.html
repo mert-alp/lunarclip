@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌙 LunarClip — Backlink & Launch Command Center</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151d2f;
+      --card-border: #243048;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --green: #22c55e;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 30px 20px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    h1 { font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
+    .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--green);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+      z-index: 9999;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .card-title { font-size: 1.3rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      background: #1e293b;
+      color: var(--accent);
+      border: 1px solid #38bdf833;
+    }
+    .badge.green { background: #064e3b; color: #34d399; border-color: #34d39933; }
+    .badge.orange { background: #7c2d12; color: #fb923c; border-color: #fb923c33; }
+    .btn-open {
+      display: inline-block;
+      text-align: center;
+      background: var(--accent);
+      color: #0b0f19;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+    }
+    .btn-open:hover { background: var(--accent-hover); color: #fff; }
+    .field { margin-bottom: 14px; }
+    .field-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .field-box {
+      background: #0d1322;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      word-break: break-all;
+    }
+    .field-box.multiline {
+      flex-direction: column;
+      align-items: stretch;
+      max-height: 120px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 0.82rem;
+      word-break: normal;
+    }
+    .btn-copy {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: var(--text);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+    .btn-copy:hover {
+      background: var(--accent);
+      color: #0b0f19;
+      border-color: var(--accent);
+    }
+    .copy-footer {
+      margin-top: 8px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<div id="toast" class="toast">Kopyalandı! ✓</div>
+
+<div class="container">
+  <header>
+    <h1>🌙 LunarClip Launch Command Center</h1>
+    <p class="subtitle">Backlink Kaynakları ve Topluluk Gönderileri için 1-Tıkla Kopyala & Gönderim Paneli</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- Card 1: AlternativeTo -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">AlternativeTo</span>
+        <span class="badge green">DA 83 • Öncelik #1</span>
+      </div>
+      <a href="https://alternativeto.net/software/suggest/" target="_blank" class="btn-open">AlternativeTo Gönderim Formunu Aç ↗</a>
+      
+      <div class="field">
+        <div class="field-label">Uygulama Adı</div>
+        <div class="field-box">
+          <span>LunarClip</span>
+          <button class="btn-copy" onclick="copyText('LunarClip')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Website URL</div>
+        <div class="field-box">
+          <span>https://lunarclip.com</span>
+          <button class="btn-copy" onclick="copyText('https://lunarclip.com')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Download URL</div>
+        <div class="field-box">
+          <span>https://lunarclip.com/download</span>
+          <button class="btn-copy" onclick="copyText('https://lunarclip.com/download')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Alternatifi Olduğu Araçlar (SEO İÇİN KRİTİK)</div>
+        <div class="field-box">
+          <span>OpusClip, Vizard, Klap, Choppity, Descript</span>
+          <button class="btn-copy" onclick="copyText('OpusClip, Vizard, Klap, Choppity, Descript')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Kısa Açıklama</div>
+        <div class="field-box">
+          <span>Local-first AI clipper for Windows turning long videos into vertical shorts.</span>
+          <button class="btn-copy" onclick="copyText('Local-first AI clipper for Windows turning long videos into vertical shorts.')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Detaylı Açıklama (Description)</div>
+        <div class="field-box multiline" id="alt-desc">LunarClip is a Windows desktop application that turns long-form video files and public YouTube links into captioned vertical shorts for TikTok, YouTube Shorts, and Instagram Reels.
+
+Unlike cloud-based clippers that require uploading tens of gigabytes of footage, LunarClip runs locally on your PC:
+- Video and audio never leave your machine; media inspection and speech transcription (via faster-whisper in 46+ languages) run locally.
+- Multi-signal highlight selection combines audience replay heatmaps, sound spikes, scene dynamics, and AI moment scoring.
+- Adaptive layout templates: Podcast split-screen with active speaker cutting, Gaming layout with facecam on top (~30%) and gameplay below (~70%), and Sports wide tracking following the ball.
+- Transparent pricing with predictable monthly video allowances instead of expiring credit systems.</div>
+        <div class="copy-footer">
+          <button class="btn-copy" onclick="copyElement('alt-desc')">Tüm Açıklamayı Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Reddit (r/SideProject & r/SaaS) -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Reddit (r/SideProject)</span>
+        <span class="badge orange">Topluluk & Organik Trafik</span>
+      </div>
+      <a href="https://www.reddit.com/r/SideProject/submit" target="_blank" class="btn-open">r/SideProject Gönderim Ekranını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Gönderi Başlığı (Title)</div>
+        <div class="field-box">
+          <span>Tired of 1-hour cloud uploads and credit burn on OpusClip, I built a local-first Windows clipper (LunarClip)</span>
+          <button class="btn-copy" onclick="copyText('Tired of 1-hour cloud uploads and credit burn on OpusClip, I built a local-first Windows clipper (LunarClip)')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Gönderi Gövdesi (Markdown Body)</div>
+        <div class="field-box multiline" id="reddit-body">Hey everyone,
+
+If you produce or edit long-form content (2+ hour podcasts, Twitch VODs, esports games), you've probably tested cloud AI clippers like OpusClip or Vizard. 
+
+While they're fine for 5-minute clips, I kept hitting two major walls with long footage:
+1. **The Upload Bottleneck**: Waiting 45 minutes to upload a 20GB recording to a browser just to see if the tool could find anything.
+2. **The "Per-Minute Credit Burn"**: A 2-hour video burns 120 credits. If you don't use them, credits expire, and projects disappear when subscriptions pause.
+
+To solve this, I spent the last few months building **LunarClip** (https://lunarclip.com) — a native Windows desktop app built around a **local-first engine**:
+
+- 🔒 **Video stays on your machine**: Media extraction (FFmpeg) and transcription (faster-whisper in 46+ languages) run locally on your PC. Only the lightweight text transcript is sent for AI semantic scoring.
+- 🎯 **Measured Highlights**: Rather than relying purely on an AI "predicting virality", it reads YouTube audience replay curves (what viewers actually rewound to), acoustic spikes, and scene cuts.
+- 📐 **Adaptive Framing Presets**:
+  - *Podcasts*: Splits the screen automatically when two people speak and cuts to whoever is talking.
+  - *Gaming*: Detects facecam and places it on top (~30%) with gameplay below (~70%).
+  - *Sports*: Wide tracking that follows the ball and nearby action instead of jarring tight zooms.
+- 💳 **Flat Monthly Quotas**: No expiring per-minute tokens. Free tier includes 5 videos/month.
+
+We've also put together an open showcase and community issue tracker on GitHub: https://github.com/mert-alp/lunarclip
+
+I’d love to get feedback from fellow creators and devs: how do you currently handle vertical reframing, and what layout styles do you think are most effective?</div>
+        <div class="copy-footer">
+          <button class="btn-copy" onclick="copyElement('reddit-body')">Tüm Reddit Metnini Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Product Hunt -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Product Hunt</span>
+        <span class="badge green">DA 91 • Lansman</span>
+      </div>
+      <a href="https://www.producthunt.com/posts/new" target="_blank" class="btn-open">Product Hunt Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Ürün Adı</div>
+        <div class="field-box">
+          <span>LunarClip</span>
+          <button class="btn-copy" onclick="copyText('LunarClip')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Tagline (Maks 60 Karakter)</div>
+        <div class="field-box">
+          <span>AI long-to-vertical video clipper for Windows</span>
+          <button class="btn-copy" onclick="copyText('AI long-to-vertical video clipper for Windows')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Maker İlk Yorum (Lansman Anında)</div>
+        <div class="field-box multiline" id="ph-comment">Hey Product Hunt community! 👋
+
+I'm Mert, creator of LunarClip (https://lunarclip.com).
+
+As content creators, we know the friction of turning 2-hour podcasts or livestreams into vertical shorts:
+1. You wait forever uploading 20GB+ video files to a browser.
+2. Opaque credit systems penalize long content (a single 2-hour stream can burn 120 credits).
+
+We built LunarClip as a native Windows desktop app to solve this with a local-first philosophy:
+🔒 Privacy-First: Your raw video stays on your PC. Demuxing (FFmpeg) and transcription (faster-whisper in 46+ languages) execute locally.
+🎯 Real Engagement Signals: It reads YouTube audience replay heatmaps, sound energy, and scene cuts.
+📐 Smart Framing: Podcast split-screen, gaming webcam overlays, and sports ball-tracking.
+💳 Zero Credit Gimmicks: Simple flat monthly source video allowances.
+
+Download the free tier on Windows and let me know your thoughts!</div>
+        <div class="copy-footer">
+          <button class="btn-copy" onclick="copyElement('ph-comment')">Maker Yorumunu Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Toolify.ai & Futurepedia -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Toolify.ai & Futurepedia</span>
+        <span class="badge">AI Dizinleri</span>
+      </div>
+      <a href="https://www.toolify.ai/submit" target="_blank" class="btn-open">Toolify.ai Gönderim Sayfasını Aç ↗</a>
+      <a href="https://www.futurepedia.io/submit-tool" target="_blank" class="btn-open" style="background:#8b5cf6;">Futurepedia Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Kısa Açıklama (AI Dizinleri İçin)</div>
+        <div class="field-box multiline" id="ai-dir-desc">LunarClip is a local-first Windows AI desktop app that transforms long video files and YouTube links into vertical clips for TikTok and YouTube Shorts. Video files never leave your PC; speech transcription runs locally via faster-whisper with smart reframing for podcasts, gaming, and sports.</div>
+        <div class="copy-footer">
+          <button class="btn-copy" onclick="copyElement('ai-dir-desc')">Açıklamayı Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: There's An AI For That -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">There's An AI For That</span>
+        <span class="badge">TAAFT Katalogu</span>
+      </div>
+      <a href="https://theresanaiforthat.com/submit/" target="_blank" class="btn-open">TAAFT Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Görev / Task</div>
+        <div class="field-box">
+          <span>Turning long videos and podcasts into vertical shorts</span>
+          <button class="btn-copy" onclick="copyText('Turning long videos and podcasts into vertical shorts')">Kopyala</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Ayırt Edici Özellik (Differentiator)</div>
+        <div class="field-box">
+          <span>Local-first processing on Windows PC, no heavy cloud video upload, no per-minute credit limits</span>
+          <button class="btn-copy" onclick="copyText('Local-first processing on Windows PC, no heavy cloud video upload, no per-minute credit limits')">Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: SaaSHub -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">SaaSHub</span>
+        <span class="badge">Yazılım Kıyaslama</span>
+      </div>
+      <a href="https://www.saashub.com/submit" target="_blank" class="btn-open">SaaSHub Gönderim Sayfasını Aç ↗</a>
+
+      <div class="field">
+        <div class="field-label">Kategori & Rakipler</div>
+        <div class="field-box">
+          <span>Video Editing Software • OpusClip, Vizard, Klap</span>
+          <button class="btn-copy" onclick="copyText('OpusClip, Vizard, Klap, Descript')">Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function showToast(text) {
+    const toast = document.getElementById('toast');
+    toast.innerText = text || 'Kopyalandı! ✓';
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); }, 2000);
+  }
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('Kopyalandı: ' + (text.length > 30 ? text.substring(0, 30) + '...' : text));
+    });
+  }
+
+  function copyElement(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    navigator.clipboard.writeText(el.innerText).then(() => {
+      showToast('Metin panoya kopyalandı! ✓');
+    });
+  }
+</script>
+
+</body>
+</html>
