@@ -104,7 +104,7 @@ flowchart TD
 | **Video Upload Needed** | ❌ **No** (Source video stays on your PC) | ⚠️ Yes (Must upload multi-GB source files) |
 | **Privacy & Security** | 🔒 **Local-first**; frames and audio never leave PC | ☁️ Entire video uploaded to third-party cloud |
 | **Long File Support** | ⏱️ Up to 8 hours per source file on Pro | ⏳ Heavily restricted or high credit cost |
-| **Pricing Model** | 💳 Flat monthly source allowance ($0 / $5 / $10) | 🪙 Opaque credit balances that drain fast |
+| **Pricing Model** | 💳 Flat monthly source allowance ($0 / $3.49 / $7.99) | 🪙 Opaque credit balances that drain fast |
 | **Layout Flexibility** | 🎨 Split-screen, Game facecam overlay, Sports wide track | 🔲 Fixed center crops or generic templates |
 | **Subtitles** | 🔤 46+ languages with faster-whisper | 🌐 Variable cloud ASR |
 | **Supported OS** | 🖥️ Native Windows 10 & 11 (64-bit) | 🌐 Web browser only |
