@@ -8,7 +8,7 @@
 [![Website](https://img.shields.io/badge/Website-lunarclip.com-38bdf8?style=for-the-badge&logo=google-chrome&logoColor=white)](https://lunarclip.com)
 [![Download for Windows](https://img.shields.io/badge/Download-Windows_10_%2F_11-0078d4?style=for-the-badge&logo=windows&logoColor=white)](https://lunarclip.com/download)
 [![Platform](https://img.shields.io/badge/Platform-Windows_64--bit-blue?style=for-the-badge)](https://lunarclip.com)
-[![Privacy](https://img.shields.io/badge/Privacy-Local--First-22c55e?style=for-the-badge&logo=shield&logoColor=white)](https://lunarclip.com)
+[![Privacy](https://img.shields.io/badge/Privacy-Local--First-22c55e?style=for-the-badge&logo=shield&logoColor=white)](https://lunarclip.com/privacy)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 <br/>
@@ -135,7 +135,7 @@ flowchart TD
 - 📥 **Download for Windows**: [https://lunarclip.com/download](https://lunarclip.com/download)
 - 💡 **Feature Guides**: [https://lunarclip.com](https://lunarclip.com)
 - 🐞 **Issue Tracker**: [GitHub Issues](https://github.com/mert-alp/lunarclip/issues)
-- 📜 **Terms & Privacy**: [Terms of Service](https://lunarclip.com) • [Privacy Policy](https://lunarclip.com)
+- 📜 **Terms & Privacy**: [Terms of Service](https://lunarclip.com/terms-of-service) • [Privacy Policy](https://lunarclip.com/privacy-policy)
 
 ---
 
