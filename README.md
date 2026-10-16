@@ -133,7 +133,7 @@ flowchart TD
 
 - 🌐 **Official Website**: [https://lunarclip.com](https://lunarclip.com)
 - 📥 **Download for Windows**: [https://lunarclip.com/download](https://lunarclip.com/download)
-- 💡 **Feature Guides**: [https://lunarclip.com](https://lunarclip.com)
+- 💡 **Feature Guides**: [https://lunarclip.com](https://lunarclip.com/guides)
 - 🐞 **Issue Tracker**: [GitHub Issues](https://github.com/mert-alp/lunarclip/issues)
 - 📜 **Terms & Privacy**: [Terms of Service](https://lunarclip.com/terms-of-service) • [Privacy Policy](https://lunarclip.com/privacy-policy)
 
